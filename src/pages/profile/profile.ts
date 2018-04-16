@@ -34,3 +34,23 @@ export class ProfilePage {
   }
 
 }
+
+
+// uploadProfile(data, picType) {
+//   var storageLocation = "";
+//   if (picType == "logo") {
+//     storageLocation = '/photos/logo/';
+//     this.fireData.uploadProfile(data, storageLocation).then((url) => {
+//       console.log("url imageUpload", url)
+//       this.logoImageData = url;
+//       this.showSuccesfulUploadAlert();
+//     })
+//   } else if (picType == "backgroundImage") {
+//     storageLocation = '/photos/background/';
+//     this.fireData.uploadProfile(data, storageLocation).then((url) => {
+//       console.log("url back", url)
+//       this.backgroundImage = url;
+//       this.showSuccesfulUploadAlert();
+//     })
+//   }
+// }

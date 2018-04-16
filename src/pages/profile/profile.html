@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="background">
 
   <p>Name: {{username}}</p>
   <p>Email Id: {{email}}</p>
@@ -21,3 +21,15 @@
   <p>Occupation: {{occupation}}</p>
 
 </ion-content>
+
+<!-- <ion-item>
+    Upload Logo
+    <image-upload [max]="1" [buttonCaption]="'Select Logo'" [dropBoxMessage]="''" [extensions]="['jpg','png']" (uploadFinished)="onImageSelect($event, 'logo')"
+      (removed)="onImgRemoved($event)"></image-upload>
+  </ion-item>
+
+  <ion-item>
+    Upload Background image
+    <image-upload [max]="1" [buttonCaption]="'Select image'" [dropBoxMessage]="''" [extensions]="['jpg','png']" (uploadFinished)="onImageSelect($event, 'backgroundImage')"
+      (removed)="onImgRemoved($event)"></image-upload>
+  </ion-item> -->
