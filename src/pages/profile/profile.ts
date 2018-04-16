@@ -1,3 +1,4 @@
+import { GlobalProvider } from './../../providers/global/global';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,8 +15,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
+  username:string;
+  email:string;
+  age:number;
+  occupation:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public global:GlobalProvider) {
+    this.username=global.userNAME;
+    this.email=this.global.Email;
+    this.age=this.global.Age;
+    this.occupation=this.global.Occupation;
+
+    console.log(this.global.Email);
   }
 
   ionViewDidLoad() {

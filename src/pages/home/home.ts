@@ -1,3 +1,4 @@
+import { TabsPage } from './../tabs/tabs';
 import { GlobalProvider } from './../../providers/global/global';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { PostPage } from './../post/post';
@@ -36,6 +37,9 @@ export class HomePage {
       name: ['', Validators.compose([Validators.required])],
       email:['',Validators.compose([Validators.required])],
       password:['',Validators.compose([Validators.required])],
+      age:['',Validators.compose([Validators.required])],
+      occupation:['',Validators.compose([Validators.required])],
+
 
     })
   }
@@ -46,12 +50,16 @@ export class HomePage {
     .then(data=>{
       this.signupFormData=data;
       this.global.userID=this.signupFormData.uid;
+      this.global.Email=this.signupFormData.email;
+      this.global.Age=this.signupForm.value.age;
+      this.global.Occupation=this.signupForm.value.occupation;
+      console.log(this.signupFormData.email);
       console.log(this.signupFormData);
       console.log(this.global.userID); 
       this.presentLoadingDefault();
       this.addUserIdToProvider();
 
-      this.navCtrl.push(PostPage );
+      this.navCtrl.setRoot(TabsPage );
       
     })
     .catch(error=>{

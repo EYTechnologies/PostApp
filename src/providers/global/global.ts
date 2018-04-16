@@ -15,6 +15,9 @@ export class GlobalProvider {
   userNAME:string='';
   allPosts:any;
   myPosts:any;
+  Email:string;
+  Age:number;
+  Occupation: string;
 
   constructor() {
     console.log('Hello GlobalProvider Provider');

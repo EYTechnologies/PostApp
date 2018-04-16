@@ -53,6 +53,7 @@ export class LoginPage {
     .then(data=>{
 
       this.global.userID=data.uid;
+      this.global.Email=data.email;
       this.showAlertOnLogin();
       console.log("got some data",data);
       this.presentLoadingDefault();

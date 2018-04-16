@@ -37,6 +37,7 @@ export class FirebaseProvider {
         PostBody: formData.value.postBody,
         UserId: this.global.userID,
         PostId: uniquePostKey,
+      
 			}, () => {
 
 				// Add allPosts Globally
