@@ -23,6 +23,8 @@ import { HttpModule } from '@angular/http';
 import { FirebaseProvider } from '../providers/firebase/firebase';
 import { GlobalProvider } from '../providers/global/global';
 
+import { ImageUploadModule } from "angular2-image-upload";
+
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { GlobalProvider } from '../providers/global/global';
     AngularFireAuthModule,
     HttpModule,
     AngularFireDatabaseModule,
+    ImageUploadModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
