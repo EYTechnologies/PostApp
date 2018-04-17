@@ -13,6 +13,7 @@ import { PostPage } from './../pages/post/post';
 import { LoggedInPage } from './../pages/logged-in/logged-in';
 import { ProfilePage} from './../pages/profile/profile';
 import { TabsPage } from './../pages/tabs/tabs';
+import { UploadImagePage} from './../pages/upload-image/upload-image';
 
 import { AngularFireModule} from 'angularfire2';
 import { FIREBASE_CONFIG } from './app.firebase.config';
@@ -24,7 +25,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { GlobalProvider } from '../providers/global/global';
 
 import { ImageUploadModule } from "angular2-image-upload";
-
+ 
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ImageUploadModule } from "angular2-image-upload";
     MypostsPage,
     ProfilePage,
     TabsPage,
+    UploadImagePage,
    
   ],
   imports: [
@@ -59,6 +61,7 @@ import { ImageUploadModule } from "angular2-image-upload";
     MypostsPage,
     ProfilePage,
     TabsPage,
+    UploadImagePage,
   ],
   providers: [
     StatusBar,

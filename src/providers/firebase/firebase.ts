@@ -119,7 +119,27 @@ export class FirebaseProvider {
     });
   }
 
+  uploadProfile(data, storageLocation) {
+		var filename = (new Date()).getTime() + '.jpg';
+		let uploadTask = firebase.storage().ref(storageLocation + filename).putString(data, 'base64', { contentType: 'image/jpeg' });
+		return new Promise((resolve, reject) => {
+			uploadTask.on('state_changed', (snapshot) => {
+
+			}, (err) => {
+				reject(false);
+			}, () => {
+				console.log(uploadTask.snapshot.downloadURL);
+
+				resolve(uploadTask.snapshot.downloadURL);
+				return;
+
+			});
+		});
+	}
+
 }
+
+
 // fetchAllJobs() {
 //   var uid = this.globals.userId;
 //   var companyName = this.globals.userData.typeName;

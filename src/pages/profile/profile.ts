@@ -1,6 +1,7 @@
 import { GlobalProvider } from './../../providers/global/global';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
+import { FirebaseProvider } from '../../providers/firebase/firebase';
 
 /**
  * Generated class for the ProfilePage page.
@@ -20,7 +21,10 @@ export class ProfilePage {
   age:number;
   occupation:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public global:GlobalProvider) {
+  
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public global:GlobalProvider,
+  public fireData:FirebaseProvider, public alertCtrl:AlertController) {
     this.username=global.userNAME;
     this.email=this.global.Email;
     this.age=this.global.Age;
@@ -32,6 +36,8 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
   }
+
+  
 
 }
 
