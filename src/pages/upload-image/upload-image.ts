@@ -36,7 +36,9 @@ export class UploadImagePage {
     this.imageData = event.src.split(',')[1];
     console.log('image data', this.imageData)
     this.uploadProfile( this.imageData,picType)
+    
 }
+
 
 uploadProfile(data, picType) {
   var storageLocation = "";
@@ -46,6 +48,7 @@ uploadProfile(data, picType) {
     this.fireData.uploadProfile(data, storageLocation).then((url) => {
       console.log("url imageUpload", url)
       this.logoImageData = url;
+      this.global.logoIMAGEDATA=this.logoImageData;
       this.showSuccesfulUploadAlert();
     })
   } else if (picType == "backgroundImage") {
@@ -53,6 +56,7 @@ uploadProfile(data, picType) {
     this.fireData.uploadProfile(data, storageLocation).then((url) => {
       console.log("url back", url)
       this.backgroundImage = url;
+      this.global.imageDATA=this.backgroundImage;
       this.showSuccesfulUploadAlert();
     })
   }

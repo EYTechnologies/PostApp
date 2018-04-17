@@ -19,6 +19,9 @@ export class GlobalProvider {
   Age:number;
   Occupation: string;
 
+  logoIMAGEDATA:any;
+  imageDATA:any;
+
   constructor() {
     console.log('Hello GlobalProvider Provider');
     console.log(this.userID);

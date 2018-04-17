@@ -16,6 +16,8 @@
 <ion-content padding>
 
     <ion-item>
+        <p>Select a photo and it will be uploaded</p>
+        <br>
         Upload Logo
         <image-upload [max]="1" [buttonCaption]="'Select Logo'" [dropBoxMessage]="''" [extensions]="['jpg','png']" (uploadFinished)="onImageSelect($event, 'logo')"
           (removed)="onImgRemoved($event)"></image-upload>
@@ -26,5 +28,7 @@
         <image-upload [max]="1" [buttonCaption]="'Select image'" [dropBoxMessage]="''" [extensions]="['jpg','png']" (uploadFinished)="onImageSelect($event, 'backgroundImage')"
           (removed)="onImgRemoved($event)"></image-upload>
       </ion-item>
+
+    
 
 </ion-content>

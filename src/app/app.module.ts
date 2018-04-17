@@ -25,6 +25,7 @@ import { FirebaseProvider } from '../providers/firebase/firebase';
 import { GlobalProvider } from '../providers/global/global';
 
 import { ImageUploadModule } from "angular2-image-upload";
+import { PhotoViewer } from '@ionic-native/photo-viewer';
  
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ImageUploadModule } from "angular2-image-upload";
     HttpModule,
     AngularFireDatabaseModule,
     ImageUploadModule.forRoot(),
+    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -68,7 +70,8 @@ import { ImageUploadModule } from "angular2-image-upload";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     FirebaseProvider,
-    GlobalProvider
+    GlobalProvider,
+    PhotoViewer,
   ]
 })
 export class AppModule {} 
