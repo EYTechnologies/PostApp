@@ -123,7 +123,7 @@ export class FirebaseProvider {
 		var filename = (new Date()).getTime() + '.jpg';
 		let uploadTask = firebase.storage().ref(storageLocation + filename).putString(data, 'base64', { contentType: 'image/jpeg' });
 		return new Promise((resolve, reject) => {
-			uploadTask.on('state_changed', (snapshot) => {
+    uploadTask.on('state_changed', (snapshot) =>{
 
 			}, (err) => {
 				reject(false);
