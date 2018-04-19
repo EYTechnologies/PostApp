@@ -4,4 +4,12 @@ page-profile {
         background-color: chocolate;
     }
 
+    ion-img {
+        display: inline-block;
+        min-width: 20px;
+        min-height: 20px;
+        background: null;
+        contain: strict;
+    }
+
 }

@@ -157,9 +157,9 @@ export class FirebaseProvider {
   return new Promise((resolve, reject) => {
   var dbRef = firebase.database().ref('/users/' + this.global.userID).child('Pics').push()
   var uniquePicsKey=dbRef.key
-  console.log(dbRef.key);
+  console.log("unique pic key=",dbRef.key);
   this.global.picsID=uniquePicsKey;
-  console.log("globa pics id",this.global.picsID);
+  console.log("global pics id",this.global.picsID);
   // var dbRefTwo = firebase.database().ref('/users/' + this.global.userID +'/Pics/'+ uniquePicsKey)
   dbRef.set({
     ImageUrl: this.global.imageDATA,
