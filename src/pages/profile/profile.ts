@@ -35,6 +35,8 @@ export class ProfilePage {
 
     console.log(this.global.Email);
   
+    // this.fireData.getPicsData();
+    
 
     // this.imagedata=this.global.imageDATA;
     // this.logoimagedata=this.global.logoIMAGEDATA;
@@ -56,9 +58,22 @@ export class ProfilePage {
     this.logoimagedata=this.global.logoIMAGEDATA;
     console.log(this.imagedata);
     console.log(this.logoimagedata);
+
+    // this.getImageLogoUrl();
   }
 
- 
+  getImageLogoUrl()
+  {
+    this.fireData.getPicsData().then((data)=>{
+      console.log("pic url data",data);
+    
+    
+    })
+    .catch((error)=>{
+      console.log(error);
+      });
+  }
+  
   
 
 }

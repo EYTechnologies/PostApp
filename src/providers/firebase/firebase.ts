@@ -182,7 +182,7 @@ getPicsData()
     dbRef.once('value',(picUrl)=>{
     this.picsurl=_.toArray(picUrl.val());
     console.log(this.picsurl);
-    resolve( this.picsurl);
+    resolve( picUrl);
     
 
     }).catch(error=>{
