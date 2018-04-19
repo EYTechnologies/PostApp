@@ -55,6 +55,7 @@ export class FirebaseProvider {
 		});
   }
   
+      // this method is called for registeration of member
       addUserFire(formData)
       {
       return new Promise((resolve, reject) => {
@@ -65,8 +66,21 @@ export class FirebaseProvider {
 			  Name: formData.value.name,
         UserId: this.global.userID,
         Email: formData.value.email,
+        Age: this.global.Age,
+        Occupation: this.global.Occupation,
    
 			}, () => {
+        // Add allPosts Globally
+				var gDbRef = firebase.database().ref('/allPosts/');
+        gDbRef.set({
+        // PostTitle: formData.value.postTitle,
+        // PostBody: formData.value.postBody,
+        // Name: this.global.userNAME,
+        // UserId: this.global.userID,
+      }, () => {
+        resolve({ success: true });
+
+      });
 			});
 		});
   }
@@ -135,22 +149,21 @@ export class FirebaseProvider {
 
 			});
 		});
-	}
+  }
 
+  addImageUrl()
+  {
+  return new Promise((resolve, reject) => {
+  var dbRef = firebase.database().ref('/users/' + this.global.userID)
+  dbRef.push({
+    ImageUrl: this.global.imageDATA,
+    LogoUrl: this.global.logoIMAGEDATA,
+    
+  }, () => {
+  });
+});
+}
+  
 }
 
 
-// fetchAllJobs() {
-//   var uid = this.globals.userId;
-//   var companyName = this.globals.userData.typeName;
-//   return new Promise((resolve, reject) => {
-//     var dbRef = firebase.database().ref('/allJobs')
-//     dbRef.on('value', (jobs) => {
-//       var allJobsArr = _.toArray(jobs.val());
-//       console.log('all Jobs on fireData', allJobsArr);
-//       this.globals.allJobs = allJobsArr
-//       console.log("globals data", this.globals.allJobs)
-//       resolve(allJobsArr);
-//     })
-//   });
-// }

@@ -33,12 +33,7 @@ export class MypostsPage {
       this.fireData.fetchMyPosts().then((data)=>{
       this.myPostData=this.global.myPosts;
       console.log(this.myPostData);
-      // console.log(this.allPostData[0].PostTitle);
-      // console.log(this.allPostData[0].PostBody);
-     
-
-
-      })
+    })
   }  
 
 

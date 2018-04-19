@@ -1,3 +1,5 @@
+import { FIREBASE_CONFIG } from './../../app/app.firebase.config';
+import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { GlobalProvider } from './../../providers/global/global';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -24,18 +26,17 @@ export class ProfilePage {
   logoimagedata:any;
   
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public global:GlobalProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public global:GlobalProvider,
+              public fireData:FirebaseProvider) {
     this.username=global.userNAME;
     this.email=this.global.Email;
     this.age=this.global.Age;
     this.occupation=this.global.Occupation;
 
     console.log(this.global.Email);
+    this.getImageLogoUrl();
 
-    this.imagedata=this.global.imageDATA;
-    this.logoimagedata=this.global.logoIMAGEDATA;
-    console.log(this.imagedata);
-    console.log(this.logoimagedata);
+    
 
     
   }
@@ -43,6 +44,19 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
     
+  }
+
+  getImageLogoUrl()
+  {
+    this.fireData.addImageUrl().then((data)=>{
+    this.imagedata=this.global.imageDATA;
+    this.logoimagedata=this.global.logoIMAGEDATA;
+    console.log(this.imagedata);
+    console.log(this.logoimagedata);
+    })
+    .catch((error)=>{
+      console.log(error);
+      });
   }
 
   
