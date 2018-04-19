@@ -49,6 +49,7 @@ uploadProfile(data, picType) {
       console.log("url imageUpload", url)
       this.logoImageData = url;
       this.global.logoIMAGEDATA=this.logoImageData;
+      console.log(this.global.logoIMAGEDATA);
       this.showSuccesfulUploadAlert();
     })
   } else if (picType == "backgroundImage") {
