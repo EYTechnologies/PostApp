@@ -159,7 +159,8 @@ export class FirebaseProvider {
     ImageUrl: this.global.imageDATA,
     LogoUrl: this.global.logoIMAGEDATA,
     
-  }, () => {
+  }, (error) => {
+    console.log(error);
   });
 });
 }

@@ -34,7 +34,12 @@ export class ProfilePage {
     this.occupation=this.global.Occupation;
 
     console.log(this.global.Email);
-    this.getImageLogoUrl();
+  
+
+    this.imagedata=this.global.imageDATA;
+    this.logoimagedata=this.global.logoIMAGEDATA;
+    console.log(this.imagedata);
+    console.log(this.logoimagedata);
 
     
 
@@ -46,19 +51,7 @@ export class ProfilePage {
     
   }
 
-  getImageLogoUrl()
-  {
-    this.fireData.addImageUrl().then((data)=>{
-    this.imagedata=this.global.imageDATA;
-    this.logoimagedata=this.global.logoIMAGEDATA;
-    console.log(this.imagedata);
-    console.log(this.logoimagedata);
-    })
-    .catch((error)=>{
-      console.log(error);
-      });
-  }
-
+ 
   
 
 }

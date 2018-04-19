@@ -34,8 +34,8 @@ export class UploadImagePage {
   onImageSelect(event, picType) {
     this.logo = 'default';
     this.imageData = event.src.split(',')[1];
-    console.log('image data', this.imageData)
-    this.uploadProfile( this.imageData,picType)
+    console.log('image data', this.imageData);
+    this.uploadProfile( this.imageData,picType);
     
 }
 
@@ -78,5 +78,22 @@ showSuccesfulUploadAlert() {
 onImgRemoved(event) {
   this.logo = null;
 }
+
+getImageLogoUrl()
+{
+  this.fireData.addImageUrl().then((data)=>{
+  
+  
+  })
+  .catch((error)=>{
+    console.log(error);
+    });
+}
+
+done()
+{
+  this.getImageLogoUrl();
+}
+
 
 }
