@@ -24,11 +24,26 @@
   <p>Uploaded pics:</p>
   <!-- <ion-img style="width: 100%; height: 100%;"  src="{{logoimagedata}}"></ion-img> -->
   <!-- <ion-img style="width: 100%; height: 100%;"  src="{{imagedata}}"></ion-img> -->
-
+  <!-- <div *ngFor="let pic of pics">
   <div *ngIf="logoimagedata && imagedata  ">
     <img src="{{logoimagedata}}">
     <img src="{{imagedata}}">
   </div>
+  </div> -->
+
+  
+    <!-- <div *ngIf="logoimagedata && imagedata  ">
+      <img src="{{logoimagedata}}">
+      <img src="{{imagedata}}">
+    </div> -->
+    
+
+    <div *ngFor="let pic of global.picsData">
+      <!-- <div *ngIf="logoimagedata && imagedata  "> -->
+        <img src="{{pic.LogoUrl}}">
+        <img src="{{pic.ImageUrl}}">
+      <!-- </div> -->
+      </div>
 
   <button ion-button (click)="getImageLogoUrl()">Get data</button>
 

@@ -19,6 +19,7 @@ export class GlobalProvider {
   Age:number;
   Occupation: string;
   picsID:string;
+  picsData:any;
 
   logoIMAGEDATA:any;
   imageDATA:any;
