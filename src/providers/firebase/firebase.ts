@@ -178,7 +178,7 @@ getPicsData()
   return new Promise((resolve,reject)=>{
     var uid = this.global.userID;
     console.log(uid);
-    var dbRef= firebase.database().ref('/users/' + uid + '/Pics/' + this.global.picsID)
+    var dbRef= firebase.database().ref('/users/' + uid + '/Pics/')
     dbRef.once('value',(picUrl)=>{
     this.picsurl=_.toArray(picUrl.val());
     console.log(this.picsurl);
