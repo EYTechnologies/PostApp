@@ -18,6 +18,7 @@ export class GlobalProvider {
   Email:string;
   Age:number;
   Occupation: string;
+  picsID:string;
 
   logoIMAGEDATA:any;
   imageDATA:any;

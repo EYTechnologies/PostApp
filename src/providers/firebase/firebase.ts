@@ -153,14 +153,21 @@ export class FirebaseProvider {
 
   addImageUrl()
   {
+    var uniquePicsKey;
   return new Promise((resolve, reject) => {
-  var dbRef = firebase.database().ref('/users/' + this.global.userID)
-  dbRef.push({
+  var dbRef = firebase.database().ref('/users/' + this.global.userID).child('Pics').push()
+  var uniquePicsKey=dbRef.key
+  console.log(dbRef.key);
+  this.global.picsID=uniquePicsKey;
+  console.log("globa pics id",this.global.picsID);
+  // var dbRefTwo = firebase.database().ref('/users/' + this.global.userID +'/Pics/'+ uniquePicsKey)
+  dbRef.set({
     ImageUrl: this.global.imageDATA,
     LogoUrl: this.global.logoIMAGEDATA,
+    PicsUrl: uniquePicsKey,
     
-  }, (error) => {
-    console.log(error);
+  }, () => {
+    
   });
 });
 }
