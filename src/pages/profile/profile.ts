@@ -36,10 +36,10 @@ export class ProfilePage {
     console.log(this.global.Email);
   
 
-    this.imagedata=this.global.imageDATA;
-    this.logoimagedata=this.global.logoIMAGEDATA;
-    console.log(this.imagedata);
-    console.log(this.logoimagedata);
+    // this.imagedata=this.global.imageDATA;
+    // this.logoimagedata=this.global.logoIMAGEDATA;
+    // console.log(this.imagedata);
+    // console.log(this.logoimagedata);
 
     
 
@@ -49,6 +49,13 @@ export class ProfilePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProfilePage');
     
+  }
+
+  ionViewWillEnter(){
+    this.imagedata=this.global.imageDATA;
+    this.logoimagedata=this.global.logoIMAGEDATA;
+    console.log(this.imagedata);
+    console.log(this.logoimagedata);
   }
 
  

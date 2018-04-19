@@ -16,6 +16,7 @@ export class FirebaseProvider {
   postId:any;
   userId:any; 
   userName:any;
+  picsurl:any;
 
   constructor( public global:GlobalProvider) {
     console.log('Hello FirebaseProvider Provider');
@@ -171,6 +172,25 @@ export class FirebaseProvider {
   });
 });
 }
+
+getPicsData()
+{
+  return new Promise((resolve,reject)=>{
+    var uid = this.global.userID;
+    console.log(uid);
+    var dbRef= firebase.database().ref('/users/' + uid + '/Pics/' + this.global.picsID)
+    dbRef.once('value',(picUrl)=>{
+    this.picsurl=_.toArray(picUrl.val());
+    console.log(this.picsurl);
+    resolve( this.picsurl);
+    
+
+    }).catch(error=>{
+      reject(error);
+    });
+  });
+}
+
   
 }
 
