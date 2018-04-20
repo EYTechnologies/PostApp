@@ -70,18 +70,6 @@ export class FirebaseProvider {
         Age: this.global.Age,
         Occupation: this.global.Occupation,
    
-			}, () => {
-        // Add allPosts Globally
-				var gDbRef = firebase.database().ref('/allPosts/');
-        gDbRef.set({
-        // PostTitle: formData.value.postTitle,
-        // PostBody: formData.value.postBody,
-        // Name: this.global.userNAME,
-        // UserId: this.global.userID,
-      }, () => {
-        resolve({ success: true });
-
-      });
 			});
 		});
   }
