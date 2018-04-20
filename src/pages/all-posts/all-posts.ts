@@ -19,17 +19,19 @@ export class AllPostsPage {
   allPostData:any;
 
 
-  constructor(public fireData: FirebaseProvider,public global:GlobalProvider) {
-    this.fireData.fetchAllPosts();
-    this.getPosts();
-    
-   
-    
+  constructor(public fireData: FirebaseProvider,public global:GlobalProvider) { 
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AllPostsPage');
+    this.getPosts();
+  }
+
+  ionViewWillEnter()
+  {
+    // this.fireData.fetchAllPosts();
+    this.getPosts();
   }
 
   getPosts()
