@@ -16,7 +16,7 @@
 <ion-content padding class='background'>
 
     <ion-item class='card'>
-        <p>Select a photo and it will be uploaded</p>
+        <p><b>Select a photo and it will be uploaded</b></p>
         <br>
         Upload Logo
         <image-upload [max]="1" [buttonCaption]="'Select Logo'" [dropBoxMessage]="''" [extensions]="['jpg','png']" (uploadFinished)="onImageSelect($event, 'logo')"
