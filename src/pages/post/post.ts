@@ -62,10 +62,12 @@ export class PostPage {
   this.fireData.getuserName().then((data)=>{
   this.NameData=data;
   console.log(this.NameData);
-  this.username=this.NameData[1];
+  this.global.Age=this.NameData[0];
+  this.username=this.NameData[2];
+  this.global.Occupation=this.NameData[3];
   this.global.userNAME=this.username;
-  console.log('Name',this.username);
-  console.log('Name',this.global.userNAME);
+  console.log('Name=',this.username);
+  console.log('Name=',this.global.userNAME);
   })
   }
 

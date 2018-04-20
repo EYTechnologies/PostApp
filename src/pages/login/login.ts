@@ -42,8 +42,8 @@ export class LoginPage {
     this.loginForm=this.formBuilder.group({
       email:['',Validators.compose([Validators.required])],
       password:['',Validators.compose([Validators.required])],
-      age:['',Validators.compose([Validators.required])],
-      occupation:['',Validators.compose([Validators.required])],
+      // age:['',Validators.compose([Validators.required])],
+      // occupation:['',Validators.compose([Validators.required])],
 
 
     })
@@ -57,8 +57,8 @@ export class LoginPage {
 
       this.global.userID=data.uid;
       this.global.Email=data.email;
-      this.global.Age=this.loginForm.value.age;
-      this.global.Occupation=this.loginForm.value.occupation;
+      // this.global.Age=this.loginForm.value.age;
+      // this.global.Occupation=this.loginForm.value.occupation;
       this.showAlertOnLogin();
       console.log("got some data",data);
       this.presentLoadingDefault();

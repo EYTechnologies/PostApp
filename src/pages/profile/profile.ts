@@ -1,8 +1,10 @@
+import { LoginPage } from './../login/login';
 import { FIREBASE_CONFIG } from './../../app/app.firebase.config';
 import { FirebaseProvider } from './../../providers/firebase/firebase';
 import { GlobalProvider } from './../../providers/global/global';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as firebase from 'firebase';
 
 /**
  * Generated class for the ProfilePage page.
@@ -34,18 +36,7 @@ export class ProfilePage {
     this.occupation=this.global.Occupation;
 
     console.log(this.global.Email);
-  
-    // this.fireData.getPicsData();
-    
-
-    // this.imagedata=this.global.imageDATA;
-    // this.logoimagedata=this.global.logoIMAGEDATA;
-    // console.log(this.imagedata);
-    // console.log(this.logoimagedata);
-
-    
-
-    
+     
   }
 
   ionViewDidLoad() {
@@ -54,26 +45,32 @@ export class ProfilePage {
   }
 
   ionViewWillEnter(){
+    this.getImageLogoUrl();
     this.imagedata=this.global.imageDATA;
     this.logoimagedata=this.global.logoIMAGEDATA;
     console.log(this.imagedata);
     console.log(this.logoimagedata);
-
-    // this.getImageLogoUrl();
   }
 
   getImageLogoUrl()
   {
     this.fireData.getPicsData().then((data)=>{
       console.log("pic url data",data);
-    
-    
     })
     .catch((error)=>{
       console.log(error);
       });
   }
   
+  Logout()
+  {
+    firebase.auth().signOut().then(function() {
+      console.log('Signed Out');
+    }, function(error) {
+      console.error('Sign Out Error', error);
+    });
+    this.navCtrl.push(LoginPage);
+  }
   
 
 }

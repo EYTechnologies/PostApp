@@ -27,7 +27,7 @@
         <ion-input type="password" placeholder="password" formControlName="password"></ion-input>
       </ion-item>
 
-      <ion-item>
+      <!-- <ion-item>
           <ion-label>Age</ion-label>
           <ion-input type="number" placeholder="Age" formControlName="age"></ion-input>
       </ion-item> 
@@ -35,7 +35,7 @@
       <ion-item>
           <ion-label>Occupation</ion-label>
           <ion-input type="text" placeholder="occupation" formControlName="occupation"></ion-input>
-      </ion-item> 
+      </ion-item>  -->
       <div class="error_password"*ngIf="hasError">{{error}}</div>
 
       <button ion-button color="primary" full [disabled]='!loginForm.valid'>LogIn</button>
